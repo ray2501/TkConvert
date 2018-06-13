@@ -8,13 +8,15 @@
 package require Tk
 package require opencc
 
-frame .menubar -relief raised -bd 2
+ttk::setTheme "default"
+
+ttk::frame .menubar -relief raised -borderwidth 2
 pack .menubar -side top -fill x
 
-menubutton .menubar.file -text File -menu .menubar.file.menu
+ttk::menubutton .menubar.file -text File -menu .menubar.file.menu
 menu .menubar.file.menu -tearoff 0
 .menubar.file.menu add command -label Quit -command exit
-menubutton .menubar.help -text Help -menu .menubar.help.menu
+ttk::menubutton .menubar.help -text Help -menu .menubar.help.menu
 menu .menubar.help.menu -tearoff 0
 .menubar.help.menu add command -label About -command HelpAbout
 pack .menubar.file .menubar.help -side left
@@ -68,7 +70,7 @@ pack .t
 text .t2 -height 12 -width 72 -background white -font {"Noto Sans" -14} -state disabled
 pack .t2
 
-button .doit -text "Run" -command DoIt
+ttk::button .doit -text "Run" -command DoIt
 pack .doit -side right
 
 # Handle F1
