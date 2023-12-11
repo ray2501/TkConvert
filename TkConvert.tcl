@@ -64,13 +64,13 @@ pack .tw2sp -side top -anchor nw
 pack .t2tw -side top -anchor nw
 pack .t2hk -side top -anchor nw
 
-text .t -height 12 -width 72 -background white -font {"Noto Sans" -14}
+text .t -height 10 -width 72 -background white -font {"Noto Sans" -14}
 pack .t
 
-text .t2 -height 12 -width 72 -background white -font {"Noto Sans" -14} -state disabled
+text .t2 -height 10 -width 72 -background white -font {"Noto Sans" -14} -state disabled
 pack .t2
 
-ttk::button .doit -text "Run" -command DoIt
+ttk::button .doit -text "Run" -command Run
 pack .doit -side right
 
 # Handle F1
@@ -95,7 +95,7 @@ proc Exit {} {
     }
 }
 
-proc DoIt {} {
+proc Run {} {
     if {[info exists ::config]==0} {
         set ::config t2s
     }
